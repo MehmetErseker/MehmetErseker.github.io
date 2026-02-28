@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Mitat Mehmet Erseker</title>
+  <meta
+    name="description"
+    content="Contact information for Mitat Mehmet Erseker."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mitat Mehmet Erseker</a>
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html" data-i18n="nav_about">About</a>
+        <a href="projects.html" data-i18n="nav_projects">Projects</a>
+        <a href="experiences.html" data-i18n="nav_experiences">Experiences</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        Dark mode
+      </button>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">TR-EN</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="menu_button">Menu</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="contact" class="section section-alt contact-card">
+      <div class="section-head">
+        <p class="section-kicker" data-i18n="contact_kicker">Reach Out</p>
+        <h2 data-i18n="contact_title">Contact Information</h2>
+      </div>
+      <p data-i18n="contact_desc">Open to internship, full-time, and collaboration opportunities.</p>
+      <div class="footer-links">
+        <a href="https://github.com/MehmetErseker" target="_blank" rel="noopener noreferrer" data-i18n="contact_github">GitHub</a>
+        <a href="https://www.linkedin.com/in/mitatmehmeterseker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:mehmet.ersekerr@hotmail.com">mehmet.ersekerr@hotmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Mitat Mehmet Erseker</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
