@@ -56,14 +56,14 @@ const projectData = {
       description:
         "Web-based e-commerce app with Django backend and React frontend, including full customer purchase flow and role-based access.",
       stack: ["Django", "React", "Python", "JavaScript"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/MehmetErseker/SUtore"
     },
     {
       title: "QuizMaster",
       description:
         "Secure quiz app with authentication, social login, Open Trivia API integration, server-side scoring, leaderboard, and score history.",
       stack: ["Web App", "API Integration", "Authentication", "JavaScript"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/MehmetErseker/QuizMaster"
     },
     {
       title: "Domain Generalized Remote Sensing Scene Classification",
@@ -79,14 +79,14 @@ const projectData = {
       description:
         "Django backend ve React frontend ile geliştirilmiş, tam müşteri satın alma akışına ve rol bazlı yetkilendirmeye sahip web tabanlı e-ticaret uygulaması.",
       stack: ["Django", "React", "Python", "JavaScript"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/MehmetErseker/SUtore"
     },
     {
       title: "QuizMaster",
       description:
         "Doğrulama ve sosyal giriş özelliklerine sahip güvenli quiz uygulaması. Open Trivia API entegrasyonu, sunucu taraflı puanlama, liderlik tablosu ve puan geçmişi içerir.",
       stack: ["Web Uygulaması", "API Entegrasyonu", "Kimlik Doğrulama", "JavaScript"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/MehmetErseker/QuizMaster"
     },
     {
       title: "Domain Generalized Remote Sensing Scene Classification",
