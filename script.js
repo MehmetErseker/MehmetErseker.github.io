@@ -29,7 +29,7 @@ const translations = {
     nav_experiences: "Deneyimler",
     nav_contact: "İletişim",
     menu_button: "Menu",
-    hero_tag: "Bilgisayar Mühendisliği Son Sınıf Öğrencisi | Yazılım Mühendisi",
+    hero_tag: "4. Sınıf Bilgisayar Mühendisliği Öğrencisi | Yazılım Mühendisi",
     hero_title: "Hakkımda",
     hero_copy:
       "Faydalı ürünler geliştirmeye ve hızlı öğrenmeye tutkulu bir yazılım mühendisiyim. Full-stack web geliştirme, yapay zeka uygulamaları ve gerçek dünya problemlerine çözüm üretmeyi seviyorum.",
@@ -106,7 +106,8 @@ const experienceData = {
       period: "Jul 2025 - Sep 2025",
       location: "Istanbul, Turkiye",
       summary:
-        "Built PentaStore with .NET Core, React, and MySQL, and integrated voice/image-based product search using Google Cloud APIs."
+        "Built PentaStore with .NET Core, React, and MySQL, and integrated voice/image-based product search using Google Cloud APIs.",
+      link: "https://github.com/MehmetErseker/PentaStore"
     },
     {
       role: "Attempter",
@@ -124,7 +125,8 @@ const experienceData = {
       period: "Tem 2025 - Eyl 2025",
       location: "İstanbul, Türkiye",
       summary:
-        ".NET Core, React ve MySQL ile PentaStore'u geliştirdim; Google Cloud API'leriyle ses/görüntü tabanlı ürün aramasını entegre ettim."
+        ".NET Core, React ve MySQL ile PentaStore'u geliştirdim; Google Cloud API'leriyle ses/görüntü tabanlı ürün aramasını entegre ettim.",
+      link: "https://github.com/MehmetErseker/PentaStore"
     },
     {
       role: "Girişimci",
@@ -215,6 +217,11 @@ const renderExperiences = () => {
       <p class="experience-meta">${experience.company} | ${experience.period}</p>
       <p class="experience-meta">${experience.location}</p>
       <p>${experience.summary}</p>
+      ${
+        experience.link
+          ? `<p><a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${experience.link}">${t("project_link")}</a></p>`
+          : ""
+      }
     `;
     experiencesList.appendChild(item);
   });
