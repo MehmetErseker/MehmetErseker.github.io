@@ -63,7 +63,7 @@ const projectData = {
       title: "SUtore",
       description:
         "Web-based e-commerce app with Django backend and React frontend, including full customer purchase flow and role-based access.",
-      stack: ["Django", "React", "Python", "JavaScript"],
+      stack: ["Django", "React", "Full-Stack", "Authorization", "Authentication", "Python", "JavaScript"],
       link: "https://github.com/MehmetErseker/SUtore",
       gallerySlug: "sutore"
     },
@@ -71,7 +71,7 @@ const projectData = {
       title: "QuizMaster",
       description:
         "Secure quiz app with authentication, social login, Open Trivia API integration, server-side scoring, leaderboard, and score history.",
-      stack: ["Web App", "API Integration", "Authentication", "JavaScript"],
+      stack: ["Express", "React", "MongoDB", "MERN", "API Integration","Social Login", "Authentication"],
       link: "https://github.com/MehmetErseker/QuizMaster",
       gallerySlug: "quizmaster"
     },
@@ -79,7 +79,7 @@ const projectData = {
       title: "Domain Generalized Remote Sensing Scene Classification",
       description:
         "Graduation project focused on domain generalization for satellite imagery using BigEarthNet and modern deep learning architectures.",
-      stack: ["Python", "PyTorch", "Deep Learning", "Mamba SSM"],
+      stack: ["Deep Learning", "Remote Sensing", "Domain Generalization", "Scene Classification"],
       link: "https://github.com/MehmetErseker"
     }
   ],
@@ -88,7 +88,7 @@ const projectData = {
       title: "SUtore",
       description:
         "Django backend ve React frontend ile geliştirilmiş, tam müşteri satın alma akışına ve rol bazlı yetkilendirmeye sahip web tabanlı e-ticaret uygulaması.",
-      stack: ["Django", "React", "Python", "JavaScript"],
+      stack: ["Django", "React", "Full-Stack", "Yetkilendirme", "Kimlik Doğrulama", "Python", "JavaScript"],
       link: "https://github.com/MehmetErseker/SUtore",
       gallerySlug: "sutore"
     },
@@ -96,7 +96,7 @@ const projectData = {
       title: "QuizMaster",
       description:
         "Doğrulama ve sosyal giriş özelliklerine sahip güvenli quiz uygulaması. Open Trivia API entegrasyonu, sunucu taraflı puanlama, liderlik tablosu ve puan geçmişi içerir.",
-      stack: ["Web Uygulaması", "API Entegrasyonu", "Kimlik Doğrulama", "JavaScript"],
+      stack: ["Express", "React", "MongoDB", "MERN", "API Entegrasyonu","Sosyal Giriş", "Kimlik Doğrulama"],
       link: "https://github.com/MehmetErseker/QuizMaster",
       gallerySlug: "quizmaster"
     },
@@ -104,7 +104,7 @@ const projectData = {
       title: "Domain Generalized Remote Sensing Scene Classification",
       description:
         "BigEarthNet veri seti ve modern derin öğrenme mimarileri kullanarak uydu görüntülerinde domain genelleme odaklı bitirme projesi.",
-      stack: ["Python", "PyTorch", "Derin Öğrenme", "Mamba SSM"],
+      stack: ["Derin Öğrenme", "Uzaktan Algılama", "Domain Genelleme", "Sahne Sınıflandırma"],
       link: "https://github.com/MehmetErseker"
     }
   ]
