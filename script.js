@@ -21,7 +21,12 @@ const translations = {
     contact_github: "GitHub",
     theme_light: "Light mode",
     theme_dark: "Dark mode",
-    project_link: "GitHub"
+    project_link: "GitHub",
+    gallery_kicker: "Screenshots",
+    gallery_suffix: "Gallery",
+    gallery_not_found: "Gallery not found for this item.",
+    gallery_back_projects: "Back to Projects",
+    gallery_back_experiences: "Back to Experiences"
   },
   tr: {
     nav_about: "Hakkımda",
@@ -45,7 +50,10 @@ const translations = {
     contact_github: "GitHub",
     theme_light: "Açık mod",
     theme_dark: "Koyu mod",
-    project_link: "GitHub"
+    project_link: "GitHub",
+    gallery_kicker: "Ekran Görselleri",
+    gallery_suffix: "Galerisi",
+    gallery_not_found: "Bu öğe için galeri bulunamadı."
   }
 };
 
@@ -56,7 +64,8 @@ const projectData = {
       description:
         "Web-based e-commerce app with Django backend and React frontend, including full customer purchase flow and role-based access.",
       stack: ["Django", "React", "Python", "JavaScript"],
-      link: "https://github.com/MehmetErseker/SUtore"
+      link: "https://github.com/MehmetErseker/SUtore",
+      gallerySlug: "sutore"
     },
     {
       title: "QuizMaster",
@@ -79,7 +88,8 @@ const projectData = {
       description:
         "Django backend ve React frontend ile geliştirilmiş, tam müşteri satın alma akışına ve rol bazlı yetkilendirmeye sahip web tabanlı e-ticaret uygulaması.",
       stack: ["Django", "React", "Python", "JavaScript"],
-      link: "https://github.com/MehmetErseker/SUtore"
+      link: "https://github.com/MehmetErseker/SUtore",
+      gallerySlug: "sutore"
     },
     {
       title: "QuizMaster",
@@ -107,7 +117,8 @@ const experienceData = {
       location: "Istanbul, Turkiye",
       summary:
         "Built PentaStore with .NET Core, React, and MySQL, and integrated voice/image-based product search using Google Cloud APIs.",
-      link: "https://github.com/MehmetErseker/PentaStore"
+      link: "https://github.com/MehmetErseker/PentaStore",
+      gallerySlug: "pentastore"
     },
     {
       role: "Attempter",
@@ -126,7 +137,8 @@ const experienceData = {
       location: "İstanbul, Türkiye",
       summary:
         ".NET Core, React ve MySQL ile PentaStore'u geliştirdim; Google Cloud API'leriyle ses/görüntü tabanlı ürün aramasını entegre ettim.",
-      link: "https://github.com/MehmetErseker/PentaStore"
+      link: "https://github.com/MehmetErseker/PentaStore",
+      gallerySlug: "pentastore"
     },
     {
       role: "Girişimci",
@@ -139,8 +151,28 @@ const experienceData = {
   ]
 };
 
+const galleryData = {
+  sutore: {
+    name: { en: "SUtore", tr: "SUtore" },
+    images: [
+      { src: "images/SUtore1.png", alt: "SUtore screenshot 1" },
+      { src: "images/SUtore2.png", alt: "SUtore screenshot 2" }
+    ]
+  },
+  pentastore: {
+    name: { en: "PentaStore", tr: "PentaStore" },
+    images: [
+      { src: "images/PentaStore1.png", alt: "PentaStore screenshot 1" },
+      { src: "images/PentaStore2.png", alt: "PentaStore screenshot 2" }
+    ]
+  }
+};
+
 const projectsGrid = document.getElementById("projectsGrid");
 const experiencesList = document.getElementById("experiencesList");
+const galleryTitle = document.getElementById("galleryTitle");
+const galleryGrid = document.getElementById("galleryGrid");
+const galleryMessage = document.getElementById("galleryMessage");
 const yearEl = document.getElementById("year");
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
@@ -182,15 +214,42 @@ const updateLangButton = () => {
   );
 };
 
+const setCardGalleryBehavior = (element, gallerySlug) => {
+  if (!element || !gallerySlug) {
+    return;
+  }
+
+  const galleryUrl = `gallery.html?item=${encodeURIComponent(gallerySlug)}`;
+  element.classList.add("clickable-card");
+  element.setAttribute("role", "link");
+  element.setAttribute("tabindex", "0");
+
+  element.addEventListener("click", (event) => {
+    if (event.target.closest("a, button")) {
+      return;
+    }
+    window.location.href = galleryUrl;
+  });
+
+  element.addEventListener("keydown", (event) => {
+    if ((event.key === "Enter" || event.key === " ") && !event.target.closest("a, button")) {
+      event.preventDefault();
+      window.location.href = galleryUrl;
+    }
+  });
+};
+
 const renderProjects = () => {
   if (!projectsGrid) {
     return;
   }
+
   const items = projectData[currentLang] || projectData.en;
   projectsGrid.innerHTML = "";
   items.forEach((project) => {
     const card = document.createElement("article");
     card.className = "card";
+
     card.innerHTML = `
       <h3>${project.title}</h3>
       <p>${project.description}</p>
@@ -199,6 +258,7 @@ const renderProjects = () => {
       </div>
       <p><a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${project.link}">${t("project_link")}</a></p>
     `;
+    setCardGalleryBehavior(card, project.gallerySlug);
     projectsGrid.appendChild(card);
   });
 };
@@ -207,11 +267,13 @@ const renderExperiences = () => {
   if (!experiencesList) {
     return;
   }
+
   const items = experienceData[currentLang] || experienceData.en;
   experiencesList.innerHTML = "";
   items.forEach((experience) => {
     const item = document.createElement("article");
     item.className = "experience-item";
+
     item.innerHTML = `
       <h3>${experience.role}</h3>
       <p class="experience-meta">${experience.company} | ${experience.period}</p>
@@ -223,23 +285,68 @@ const renderExperiences = () => {
           : ""
       }
     `;
+    setCardGalleryBehavior(item, experience.gallerySlug);
     experiencesList.appendChild(item);
+  });
+};
+
+const renderGalleryPage = () => {
+  if (!galleryGrid) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = (params.get("item") || "").toLowerCase();
+  const gallery = galleryData[slug];
+
+  galleryGrid.innerHTML = "";
+
+  if (!gallery) {
+    if (galleryTitle) {
+      galleryTitle.textContent = t("gallery_suffix");
+    }
+    if (galleryMessage) {
+      galleryMessage.textContent = t("gallery_not_found");
+    }
+    return;
+  }
+
+  const name = gallery.name[currentLang] || gallery.name.en;
+
+  if (galleryTitle) {
+    galleryTitle.textContent = `${name} ${t("gallery_suffix")}`;
+  }
+
+  if (galleryMessage) {
+    galleryMessage.textContent = "";
+  }
+
+  document.title = `${name} ${t("gallery_suffix")} | Mitat Mehmet Erseker`;
+
+  gallery.images.forEach((image) => {
+    const figure = document.createElement("figure");
+    figure.className = "gallery-card";
+    figure.innerHTML = `<img src="${image.src}" alt="${image.alt}" loading="lazy" />`;
+    galleryGrid.appendChild(figure);
   });
 };
 
 const applyLanguage = (lang) => {
   currentLang = lang === "tr" ? "tr" : "en";
   document.documentElement.lang = currentLang;
+
   i18nNodes.forEach((node) => {
     const key = node.dataset.i18n;
     if (key && translations[currentLang][key]) {
       node.textContent = translations[currentLang][key];
     }
   });
+
   updateLangButton();
   updateThemeLabel(document.documentElement.getAttribute("data-theme") || "light");
   renderProjects();
   renderExperiences();
+  renderGalleryPage();
 };
 
 applyTheme(initialTheme);

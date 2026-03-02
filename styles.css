@@ -318,10 +318,47 @@ a {
   line-height: 1.3;
 }
 
+.clickable-card {
+  cursor: pointer;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.clickable-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
 .experience-meta {
   margin: 0.35rem 0 0.4rem;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.gallery-message {
+  color: var(--muted);
+  margin: 0.2rem 0 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-card {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 
 .btn {
