@@ -359,6 +359,49 @@ a {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 10, 14, 0.88);
+  padding: 1.2rem;
+}
+
+.image-lightbox.open {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: min(1200px, 96vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--text);
+  width: 2.2rem;
+  height: 2.2rem;
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .btn {

@@ -194,6 +194,9 @@ const experiencesList = document.getElementById("experiencesList");
 const galleryTitle = document.getElementById("galleryTitle");
 const galleryGrid = document.getElementById("galleryGrid");
 const galleryMessage = document.getElementById("galleryMessage");
+const imageLightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
 const yearEl = document.getElementById("year");
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
@@ -256,6 +259,51 @@ const setCardGalleryBehavior = (element, gallerySlug) => {
     if ((event.key === "Enter" || event.key === " ") && !event.target.closest("a, button")) {
       event.preventDefault();
       window.location.href = galleryUrl;
+    }
+  });
+};
+
+const openLightbox = (src, alt) => {
+  if (!imageLightbox || !lightboxImage) {
+    return;
+  }
+
+  lightboxImage.src = src;
+  lightboxImage.alt = alt || "";
+  imageLightbox.classList.add("open");
+  imageLightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+};
+
+const closeLightbox = () => {
+  if (!imageLightbox || !lightboxImage) {
+    return;
+  }
+
+  imageLightbox.classList.remove("open");
+  imageLightbox.setAttribute("aria-hidden", "true");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+};
+
+const initLightbox = () => {
+  if (!imageLightbox) {
+    return;
+  }
+
+  imageLightbox.addEventListener("click", (event) => {
+    if (event.target === imageLightbox) {
+      closeLightbox();
+    }
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && imageLightbox.classList.contains("open")) {
+      closeLightbox();
     }
   });
 };
@@ -348,6 +396,10 @@ const renderGalleryPage = () => {
     const figure = document.createElement("figure");
     figure.className = "gallery-card";
     figure.innerHTML = `<img src="${image.src}" alt="${image.alt}" loading="lazy" />`;
+    const img = figure.querySelector("img");
+    if (img) {
+      img.addEventListener("click", () => openLightbox(image.src, image.alt));
+    }
     galleryGrid.appendChild(figure);
   });
 };
@@ -372,6 +424,7 @@ const applyLanguage = (lang) => {
 
 applyTheme(initialTheme);
 applyLanguage(currentLang);
+initLightbox();
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
@@ -415,4 +468,3 @@ if (menuToggle && siteNav) {
     }
   });
 }
-
