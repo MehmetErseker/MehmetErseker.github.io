@@ -209,6 +209,10 @@ a {
   font-size: clamp(1.6rem, 4vw, 2.4rem);
 }
 
+.section-head-centered {
+  text-align: center;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
