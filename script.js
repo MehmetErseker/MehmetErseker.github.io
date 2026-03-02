@@ -72,7 +72,8 @@ const projectData = {
       description:
         "Secure quiz app with authentication, social login, Open Trivia API integration, server-side scoring, leaderboard, and score history.",
       stack: ["Web App", "API Integration", "Authentication", "JavaScript"],
-      link: "https://github.com/MehmetErseker/QuizMaster"
+      link: "https://github.com/MehmetErseker/QuizMaster",
+      gallerySlug: "quizmaster"
     },
     {
       title: "Domain Generalized Remote Sensing Scene Classification",
@@ -96,7 +97,8 @@ const projectData = {
       description:
         "Doğrulama ve sosyal giriş özelliklerine sahip güvenli quiz uygulaması. Open Trivia API entegrasyonu, sunucu taraflı puanlama, liderlik tablosu ve puan geçmişi içerir.",
       stack: ["Web Uygulaması", "API Entegrasyonu", "Kimlik Doğrulama", "JavaScript"],
-      link: "https://github.com/MehmetErseker/QuizMaster"
+      link: "https://github.com/MehmetErseker/QuizMaster",
+      gallerySlug: "quizmaster"
     },
     {
       title: "Domain Generalized Remote Sensing Scene Classification",
@@ -156,14 +158,33 @@ const galleryData = {
     name: { en: "SUtore", tr: "SUtore" },
     images: [
       { src: "images/SUtore1.png", alt: "SUtore screenshot 1" },
-      { src: "images/SUtore2.png", alt: "SUtore screenshot 2" }
+      { src: "images/SUtore2.png", alt: "SUtore screenshot 2" },
+      { src: "images/SUtore3.png", alt: "SUtore screenshot 3" },
+      { src: "images/SUtore4.png", alt: "SUtore screenshot 4" },
+      { src: "images/SUtore5.png", alt: "SUtore screenshot 5" },
+      { src: "images/SUtore6.png", alt: "SUtore screenshot 6" }
     ]
   },
   pentastore: {
     name: { en: "PentaStore", tr: "PentaStore" },
     images: [
       { src: "images/PentaStore1.png", alt: "PentaStore screenshot 1" },
-      { src: "images/PentaStore2.png", alt: "PentaStore screenshot 2" }
+      { src: "images/PentaStore2.png", alt: "PentaStore screenshot 2" },
+      { src: "images/PentaStore3.png", alt: "PentaStore screenshot 3" },
+      { src: "images/PentaStore4.png", alt: "PentaStore screenshot 4" },
+      { src: "images/PentaStore5.png", alt: "PentaStore screenshot 5" },
+      { src: "images/PentaStore6.png", alt: "PentaStore screenshot 6" }
+    ]
+  },
+  quizmaster: {
+    name: { en: "QuizMaster", tr: "QuizMaster" },
+    images: [
+      { src: "images/QuizMaster1.png", alt: "QuizMaster screenshot 1" },
+      { src: "images/QuizMaster2.png", alt: "QuizMaster screenshot 2" },
+      { src: "images/QuizMaster3.png", alt: "QuizMaster screenshot 3" },
+      { src: "images/QuizMaster4.png", alt: "QuizMaster screenshot 4" },
+      { src: "images/QuizMaster5.png", alt: "QuizMaster screenshot 5" },
+      { src: "images/QuizMaster6.png", alt: "QuizMaster screenshot 6" }
     ]
   }
 };
@@ -394,3 +415,4 @@ if (menuToggle && siteNav) {
     }
   });
 }
+
