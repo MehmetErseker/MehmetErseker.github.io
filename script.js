@@ -118,7 +118,7 @@ const experienceData = {
       period: "Jul 2025 - Sep 2025",
       location: "Istanbul, Turkiye",
       summary:
-        "Built PentaStore with .NET Core, React, and MySQL, and integrated voice/image-based product search using Google Cloud APIs.",
+        "At Penta Teknoloji, I worked as a Software Developer Intern where I developed PentaStore, a monolithic e-commerce web application using .NET Core, React, and MySQL, and delivered core features such as authentication, product search, cart, and checkout with a modern, interactive UI. I also integrated voice- and image-based product search using Google Cloud Speech-to-Text and Google Cloud Vision API, isolating these integrations in separate Python virtual environments to prevent dependency conflicts.",
       link: "https://github.com/MehmetErseker/PentaStore",
       gallerySlug: "pentastore"
     },
@@ -128,7 +128,7 @@ const experienceData = {
       period: "Oct 2024 - Feb 2025",
       location: "Remote",
       summary:
-        "Designed prompts to evaluate instruction-following and factual accuracy, then analyzed and corrected model outputs."
+        "At Scale AI – Outlier, I worked as an Attempter, designing challenging prompts to evaluate different AI models instruction following, factual accuracy, and overall response quality. I analyzed and documented errors across generated responses and then corrected issues in the best-performing output to help improve response quality."
     }
   ],
   tr: [
@@ -138,7 +138,7 @@ const experienceData = {
       period: "Tem 2025 - Eyl 2025",
       location: "İstanbul, Türkiye",
       summary:
-        ".NET Core, React ve MySQL ile PentaStore'u geliştirdim; Google Cloud API'leriyle ses/görüntü tabanlı ürün aramasını entegre ettim.",
+        "Penta Teknoloji’de Yazılım Geliştirici Stajyeri olarak, .NET Core, React ve MySQL kullanarak PentaStore adlı monolithic bir e-ticaret web uygulaması geliştirdim; kimlik doğrulama ile birlikte ürün arama, sepet ve ödeme gibi temel iş akışlarını modern ve etkileşimli bir arayüzle hayata geçirdim. Ayrıca Google Cloud Speech-to-Text ve Google Cloud Vision API’lerini entegre ederek sesli ve görsel tabanlı ürün arama özellikleri ekledim ve bağımlılık çakışmalarını önlemek için bu entegrasyonları ayrı Python sanal ortamlarında izole şekilde yönettim.",
       link: "https://github.com/MehmetErseker/PentaStore",
       gallerySlug: "pentastore"
     },
@@ -148,7 +148,7 @@ const experienceData = {
       period: "Eki 2024 - Şub 2025",
       location: "Uzaktan",
       summary:
-        "Modelin talimat takibi ve olgusal doğruluğunu ölçen promptlar hazırladım, çıktıları analiz ederek düzeltmeler yaptım."
+        "Scale AI – Outlier’da Girişimci olarak farklı yapay zekâ modellerinin yönerge takibi, olgusal doğruluğu ve yanıt kalitesini değerlendirmek için zorlayıcı prompt’lar tasarladım. Üretilen yanıtlar üzerindeki hataları analiz edip dokümante ettikten sonra, en iyi performans gösteren çıktıda tespit edilen sorunları düzelterek yanıt kalitesinin iyileştirilmesine katkı sağladım."
     }
   ]
 };
