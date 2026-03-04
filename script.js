@@ -80,7 +80,7 @@ const projectData = {
       description:
         "Graduation project focused on domain generalization for satellite imagery using BigEarthNet and modern deep learning architectures.",
       stack: ["Deep Learning", "Remote Sensing", "Domain Generalization", "Scene Classification"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/Alicebecii/GraduationProject"
     }
   ],
   tr: [
@@ -105,7 +105,7 @@ const projectData = {
       description:
         "BigEarthNet veri seti ve modern derin öğrenme mimarileri kullanarak uydu görüntülerinde domain genelleme odaklı bitirme projesi.",
       stack: ["Derin Öğrenme", "Uzaktan Algılama", "Domain Genelleme", "Sahne Sınıflandırma"],
-      link: "https://github.com/MehmetErseker"
+      link: "https://github.com/Alicebecii/GraduationProject"
     }
   ]
 };
