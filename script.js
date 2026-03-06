@@ -206,9 +206,12 @@ const themeToggle = document.getElementById("themeToggle");
 const langToggle = document.getElementById("langToggle");
 const i18nNodes = document.querySelectorAll("[data-i18n]");
 
+const themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const isThemeValue = (value) => value === "light" || value === "dark";
+const getSystemTheme = () => (themeMediaQuery.matches ? "dark" : "light");
+
 const storedTheme = localStorage.getItem("theme");
-const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const initialTheme = storedTheme || (systemPrefersDark ? "dark" : "light");
+const initialTheme = isThemeValue(storedTheme) ? storedTheme : getSystemTheme();
 
 const storedLang = localStorage.getItem("lang");
 let currentLang = storedLang === "tr" ? "tr" : "en";
@@ -465,6 +468,20 @@ const applyLanguage = (lang) => {
 applyTheme(initialTheme);
 applyLanguage(currentLang);
 initLightbox();
+
+const syncThemeWithSystem = (event) => {
+  const savedTheme = localStorage.getItem("theme");
+  if (isThemeValue(savedTheme)) {
+    return;
+  }
+  applyTheme(event.matches ? "dark" : "light");
+};
+
+if (themeMediaQuery.addEventListener) {
+  themeMediaQuery.addEventListener("change", syncThemeWithSystem);
+} else if (themeMediaQuery.addListener) {
+  themeMediaQuery.addListener(syncThemeWithSystem);
+}
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
