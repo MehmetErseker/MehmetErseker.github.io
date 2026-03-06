@@ -19,6 +19,7 @@ const translations = {
     contact_title: "Contact Information",
     contact_desc: "Open to internship, full-time, and collaboration opportunities.",
     contact_github: "GitHub",
+    contact_linkedin: "LinkedIn",
     theme_light: "Light mode",
     theme_dark: "Dark mode",
     project_link: "GitHub",
@@ -49,6 +50,7 @@ const translations = {
     contact_title: "İletişim Bilgileri",
     contact_desc: "Staj, tam zamanlı ve iş birliği fırsatlarına açığım.",
     contact_github: "GitHub",
+    contact_linkedin: "LinkedIn",
     theme_light: "Açık mod",
     theme_dark: "Koyu mod",
     project_link: "GitHub",
@@ -64,7 +66,7 @@ const projectData = {
     {
       title: "SUtore",
       description:
-        "Web-based e-commerce app with Django backend and React frontend, including full customer purchase flow and role-based access.",
+        "Developed SUtore, a web-based online store using Django for the backend and React for the frontend, as part of Software Engineering course project. The application delivers a comprehensive e-commerce experience with essential shopping functionalities and a modern, interactive user interface.",
       stack: ["Django", "React", "Full-Stack", "Authorization", "Authentication", "Python", "JavaScript"],
       link: "https://github.com/MehmetErseker/SUtore",
       gallerySlug: "sutore"
@@ -89,7 +91,7 @@ const projectData = {
     {
       title: "SUtore",
       description:
-        "Django backend ve React frontend ile geliştirilmiş, tam müşteri satın alma akışına ve rol bazlı yetkilendirmeye sahip web tabanlı e-ticaret uygulaması.",
+        "Yazılım Mühendisliği dersinin projesi kapsamında, backend için Django ve frontend için React kullanılarak web tabanlı bir çevrimiçi mağaza olan SUtore'u geliştirdim. Uygulama, temel alışveriş işlevleri ve modern, etkileşimli bir kullanıcı arayüzü ile kapsamlı bir e-ticaret deneyimi sunuyor.",
       stack: ["Django", "React", "Full-Stack", "Yetkilendirme", "Kimlik Doğrulama", "Python", "JavaScript"],
       link: "https://github.com/MehmetErseker/SUtore",
       gallerySlug: "sutore"

@@ -511,6 +511,30 @@ a {
   color: var(--primary);
 }
 
+.footer-links a.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: var(--surface-strong);
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.footer-links a.social-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.footer-links a.social-link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .contact-card {
   text-align: center;
 }
