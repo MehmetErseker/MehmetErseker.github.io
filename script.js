@@ -316,19 +316,23 @@ const renderProjects = () => {
   const items = projectData[currentLang] || projectData.en;
   projectsGrid.innerHTML = "";
   items.forEach((project) => {
-    const card = document.createElement("article");
-    card.className = "card";
+    const item = document.createElement("article");
+    item.className = "project-item";
 
-    card.innerHTML = `
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <div class="chip-row">
-        ${project.stack.map((item) => `<span class="chip">${item}</span>`).join("")}
+    item.innerHTML = `
+      <div class="project-main">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="chip-row">
+          ${project.stack.map((stackItem) => `<span class="chip">${stackItem}</span>`).join("")}
+        </div>
       </div>
-      <p><a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${project.link}">${t("project_link")}</a></p>
+      <div class="project-actions">
+        <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${project.link}">${t("project_link")}</a>
+      </div>
     `;
-    setCardGalleryBehavior(card, project.gallerySlug);
-    projectsGrid.appendChild(card);
+    setCardGalleryBehavior(item, project.gallerySlug);
+    projectsGrid.appendChild(item);
   });
 };
 

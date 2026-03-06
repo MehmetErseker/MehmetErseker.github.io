@@ -309,6 +309,42 @@ a {
   gap: 0.9rem;
 }
 
+.project-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.project-main h3 {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.project-main p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+}
+
+.project-actions .btn {
+  white-space: nowrap;
+}
+
 .experience-item {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -543,6 +579,10 @@ a {
   }
 
   .article-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item {
     grid-template-columns: 1fr;
   }
 
