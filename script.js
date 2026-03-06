@@ -22,6 +22,7 @@ const translations = {
     theme_light: "Light mode",
     theme_dark: "Dark mode",
     project_link: "GitHub",
+    gallery_link: "Gallery",
     gallery_kicker: "Screenshots",
     gallery_suffix: "Gallery",
     gallery_not_found: "Gallery not found for this item.",
@@ -51,6 +52,7 @@ const translations = {
     theme_light: "Açık mod",
     theme_dark: "Koyu mod",
     project_link: "GitHub",
+    gallery_link: "Galeri",
     gallery_kicker: "Ekran Görselleri",
     gallery_suffix: "Galerisi",
     gallery_not_found: "Bu öğe için galeri bulunamadı."
@@ -316,6 +318,10 @@ const renderProjects = () => {
   const items = projectData[currentLang] || projectData.en;
   projectsGrid.innerHTML = "";
   items.forEach((project) => {
+    const galleryUrl = project.gallerySlug
+      ? `gallery.html?item=${encodeURIComponent(project.gallerySlug)}`
+      : "";
+    const hasActions = project.link || project.gallerySlug;
     const item = document.createElement("article");
     item.className = "project-item";
 
@@ -327,9 +333,22 @@ const renderProjects = () => {
           ${project.stack.map((stackItem) => `<span class="chip">${stackItem}</span>`).join("")}
         </div>
       </div>
-      <div class="project-actions">
-        <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${project.link}">${t("project_link")}</a>
-      </div>
+      ${
+        hasActions
+          ? `<div class="project-actions">
+              ${
+                project.link
+                  ? `<a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${project.link}">${t("project_link")}</a>`
+                  : ""
+              }
+              ${
+                project.gallerySlug
+                  ? `<a class="btn btn-ghost" href="${galleryUrl}">${t("gallery_link")}</a>`
+                  : ""
+              }
+            </div>`
+          : ""
+      }
     `;
     setCardGalleryBehavior(item, project.gallerySlug);
     projectsGrid.appendChild(item);
@@ -344,17 +363,34 @@ const renderExperiences = () => {
   const items = experienceData[currentLang] || experienceData.en;
   experiencesList.innerHTML = "";
   items.forEach((experience) => {
+    const galleryUrl = experience.gallerySlug
+      ? `gallery.html?item=${encodeURIComponent(experience.gallerySlug)}`
+      : "";
+    const hasActions = experience.link || experience.gallerySlug;
     const item = document.createElement("article");
     item.className = "experience-item";
 
     item.innerHTML = `
-      <h3>${experience.role}</h3>
-      <p class="experience-meta">${experience.company} | ${experience.period}</p>
-      <p class="experience-meta">${experience.location}</p>
-      <p>${experience.summary}</p>
+      <div class="experience-main">
+        <h3>${experience.role}</h3>
+        <p class="experience-meta">${experience.company} | ${experience.period}</p>
+        <p class="experience-meta">${experience.location}</p>
+        <p>${experience.summary}</p>
+      </div>
       ${
-        experience.link
-          ? `<p><a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${experience.link}">${t("project_link")}</a></p>`
+        hasActions
+          ? `<div class="experience-actions">
+              ${
+                experience.link
+                  ? `<a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="${experience.link}">${t("project_link")}</a>`
+                  : ""
+              }
+              ${
+                experience.gallerySlug
+                  ? `<a class="btn btn-ghost" href="${galleryUrl}">${t("gallery_link")}</a>`
+                  : ""
+              }
+            </div>`
           : ""
       }
     `;
