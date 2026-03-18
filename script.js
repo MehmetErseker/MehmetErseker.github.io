@@ -20,6 +20,7 @@
     contact_desc: "Open to internship, full-time, and collaboration opportunities.",
     contact_github: "GitHub",
     contact_linkedin: "LinkedIn",
+    footer_last_updated: "Last updated:",
     theme_light: "Light",
     theme_dark: "Dark",
     project_link: "GitHub",
@@ -51,6 +52,7 @@
     contact_desc: "Staj, tam zamanlı ve iş birliği fırsatlarına açığım.",
     contact_github: "GitHub",
     contact_linkedin: "LinkedIn",
+    footer_last_updated: "Son güncelleme:",
     theme_light: "Açık",
     theme_dark: "Koyu",
     project_link: "GitHub",
@@ -216,11 +218,17 @@ const imageLightbox = document.getElementById("imageLightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 const yearEl = document.getElementById("year");
+const lastUpdatedEl = document.getElementById("lastUpdated");
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
 const themeToggle = document.getElementById("themeToggle");
 const langToggle = document.getElementById("langToggle");
 const i18nNodes = document.querySelectorAll("[data-i18n]");
+const GITHUB_OWNER = "MehmetErseker";
+const GITHUB_REPO = "MehmetErseker.github.io";
+const GITHUB_BRANCH = "main";
+const FALLBACK_LAST_UPDATED_ISO = "2026-03-18";
+let latestUpdatedISO = FALLBACK_LAST_UPDATED_ISO;
 
 const themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const isThemeValue = (value) => value === "light" || value === "dark";
@@ -233,6 +241,51 @@ const storedLang = localStorage.getItem("lang");
 let currentLang = storedLang === "tr" ? "tr" : "en";
 
 const t = (key) => translations[currentLang][key] || key;
+
+const updateLastUpdated = () => {
+  if (!lastUpdatedEl) {
+    return;
+  }
+
+  const locale = currentLang === "tr" ? "tr-TR" : "en-US";
+  const parsedDate = new Date(latestUpdatedISO);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    lastUpdatedEl.textContent = FALLBACK_LAST_UPDATED_ISO;
+    lastUpdatedEl.setAttribute("datetime", FALLBACK_LAST_UPDATED_ISO);
+    return;
+  }
+
+  lastUpdatedEl.textContent = new Intl.DateTimeFormat(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(parsedDate);
+  const dateOnly = parsedDate.toISOString().slice(0, 10);
+  lastUpdatedEl.setAttribute("datetime", dateOnly);
+};
+
+const fetchLastCommitDate = async () => {
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/commits?sha=${encodeURIComponent(GITHUB_BRANCH)}&per_page=1`;
+
+  try {
+    const response = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+    if (!response.ok) {
+      return;
+    }
+
+    const commits = await response.json();
+    const commitDate = commits?.[0]?.commit?.committer?.date;
+    if (!commitDate) {
+      return;
+    }
+
+    latestUpdatedISO = commitDate;
+    updateLastUpdated();
+  } catch (_error) {
+    // Keep fallback date when the API is unavailable.
+  }
+};
 
 const updateThemeLabel = (theme) => {
   if (!themeToggle) {
@@ -479,11 +532,13 @@ const applyLanguage = (lang) => {
   renderProjects();
   renderExperiences();
   renderGalleryPage();
+  updateLastUpdated();
 };
 
 applyTheme(initialTheme);
 applyLanguage(currentLang);
 initLightbox();
+void fetchLastCommitDate();
 
 const syncThemeWithSystem = (event) => {
   const savedTheme = localStorage.getItem("theme");

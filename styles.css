@@ -506,6 +506,15 @@ a {
   padding: 3rem 0;
 }
 
+.site-footer small {
+  display: block;
+}
+
+.footer-updated {
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
 .footer-links {
   display: flex;
   gap: 1rem;
