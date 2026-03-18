@@ -8,7 +8,7 @@
     hero_tag: "Senior CSE Student | Software Engineer",
     hero_title: "About Me",
     hero_copy:
-      "I am a software engineer passionate about building useful products and learning fast. I enjoy full-stack web development, AI applications, and solving real-world engineering problems.",
+      "I am a Senior Computer Science and Engineering student at Sabancı University, focused on building software solutions that are practical, scalable, and impactful. My interests include full-stack development, AI applications, deep learning, and cloud technologies, and I enjoy working on projects that turn complex ideas into reliable products. I am especially motivated by solving real-world problems through technology and creating systems that balance performance, usability, and clear purpose. I am eager to keep developing as a software engineer and contribute to meaningful products in fast-moving, innovative environments.",
     hero_cta_projects: "View Projects",
     hero_cta_cv: "Read CV",
     projects_kicker: "Portfolio",
@@ -39,7 +39,7 @@
     hero_tag: "4. Sınıf Bilgisayar Mühendisliği Öğrencisi | Yazılım Mühendisi",
     hero_title: "Hakkımda",
     hero_copy:
-      "Faydalı ürünler geliştirmeye ve hızlı öğrenmeye tutkulu bir yazılım mühendisiyim. Full-stack web geliştirme, yapay zeka uygulamaları ve gerçek dünya problemlerine çözüm üretmeyi seviyorum.",
+      "Sabancı Üniversitesi Bilgisayar Bilimi ve Mühendisliği bölümünde son sınıf öğrencisiyim. Pratik, ölçeklenebilir ve etkili yazılım çözümleri geliştirmeye odaklanıyorum. İlgi alanlarım arasında full-stack geliştirme, yapay zeka uygulamaları, derin öğrenme ve bulut teknolojileri yer almaktadır. Karmaşık fikirleri güvenilir ürünlere dönüştüren projelerde çalışmaktan keyif alıyorum. Teknoloji yoluyla gerçek dünyadaki sorunları çözmek ve performans, kullanılabilirlik ve net bir amacı dengeleyen sistemler oluşturmak beni özellikle motive ediyor. Yazılım mühendisi olarak gelişmeye devam etmek ve hızlı değişen, yenilikçi ortamlarda anlamlı ürünlere katkıda bulunmak için sabırsızlanıyorum.",
     hero_cta_projects: "Projeleri Gör",
     hero_cta_cv: "CV Oku",
     projects_kicker: "Portfolyo",
