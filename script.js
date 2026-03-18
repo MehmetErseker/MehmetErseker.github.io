@@ -1,4 +1,4 @@
-const translations = {
+﻿const translations = {
   en: {
     nav_about: "About",
     nav_projects: "Projects",
@@ -85,6 +85,13 @@ const projectData = {
         "Graduation project focused on domain generalization for satellite imagery using BigEarthNet and modern deep learning architectures.",
       stack: ["Deep Learning", "Remote Sensing", "Domain Generalization", "Scene Classification"],
       link: "https://github.com/Alicebecii/GraduationProject"
+    },
+    {
+      title: "Client–Server Multiplayer Quiz System over TCP/IP",
+      description:
+        "Developed a multiplayer quiz platform utilizing TCP/IP socket programming in Python. Worked in a two-person team to implement the server–client architecture, design the communication protocol, and manage real-time interactions between players and the server. Emphasized reliable data exchange and synchronization to support stable multiplayer functionality.",
+      stack: ["Python", "TCP/IP Sockets", "Multiplayer", "Client-Server Architecture"],
+      link: "https://github.com/MehmetErseker/Client-Server-Quiz-Application"
     }
   ],
   tr: [
@@ -110,6 +117,13 @@ const projectData = {
         "BigEarthNet veri seti ve modern derin öğrenme mimarileri kullanarak uydu görüntülerinde domain genelleme odaklı bitirme projesi.",
       stack: ["Derin Öğrenme", "Uzaktan Algılama", "Domain Genelleme", "Sahne Sınıflandırma"],
       link: "https://github.com/Alicebecii/GraduationProject"
+    },
+    {
+      title: "TCP/IP Üzerinde İstemci-Sunucu Çok Oyunculu Quiz Sistemi",
+      description:
+        "Python dilinde TCP/IP soket programlamasını kullanarak çok oyunculu bir bilgi yarışması platformu geliştirdim. İki kişilik bir ekipte çalışarak sunucu-istemci mimarisini hayata geçirdim, iletişim protokolünü tasarladım ve oyuncular ile sunucu arasındaki gerçek zamanlı etkileşimleri yönettim. Kararlı çok oyunculu işlevselliği desteklemek için güvenilir veri alışverişi ve senkronizasyona özel önem verdim.",
+      stack: ["Python", "TCP/IP Sockets", "Çok Oyunculu", "İstemci-Sunucu Mimarisi"],
+      link: "https://github.com/MehmetErseker/Client-Server-Quiz-Application"
     }
   ]
 };
