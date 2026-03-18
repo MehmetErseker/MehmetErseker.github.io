@@ -130,10 +130,15 @@ a {
 .hero {
   min-height: 72vh;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-areas: "image content";
   align-items: center;
   gap: 2rem;
   padding: 3rem 0;
+}
+
+.hero-content {
+  grid-area: content;
 }
 
 .hero-content h1 {
@@ -177,13 +182,14 @@ a {
 }
 
 .hero-image {
+  grid-area: image;
   width: 100%;
   max-width: 360px;
   height: 340px;
   border-radius: 30px;
   object-fit: cover;
   box-shadow: var(--shadow);
-  justify-self: end;
+  justify-self: start;
   border: 1px solid var(--line);
 }
 
@@ -582,6 +588,9 @@ a {
 
   .hero {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "image";
     min-height: auto;
     padding-top: 1.2rem;
     gap: 1.2rem;
