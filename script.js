@@ -8,7 +8,7 @@
     hero_tag: "Senior CSE Student | Software Engineer",
     hero_title: "About Me",
     hero_copy:
-      "I am a senior Computer Science and Engineering student at Sabancı University with a strong interest in artificial intelligence, machine learning, deep learning, and software development. I enjoy working on projects that combine theoretical understanding with practical implementation, especially in areas related to intelligent systems and real-world problem solving. Through my academic and project experience, I have developed a solid foundation in building reliable software and exploring data-driven approaches to complex problems. I am particularly motivated to continue growing in research-oriented and technically challenging environments.",
+      "I am a senior Computer Science and Engineering student at Sabancı University with a strong interest in artificial intelligence, machine learning, and software development. I enjoy working on projects that combine theoretical understanding with practical implementation, especially in areas related to intelligent systems and real-world problem solving. Through my academic and project experience, I have developed a solid foundation in building reliable software and exploring data-driven approaches to complex problems. I am particularly motivated to continue growing in research-oriented and technically challenging environments.",
     hero_cta_projects: "View Projects",
     hero_cta_cv: "Read CV",
     projects_kicker: "Portfolio",
@@ -40,7 +40,7 @@
     hero_tag: "4. Sınıf Bilgisayar Mühendisliği Öğrencisi | Yazılım Mühendisi",
     hero_title: "Hakkımda",
     hero_copy:
-      "Sabancı Üniversitesi Bilgisayar Bilimi ve Mühendisliği bölümünde son sınıf öğrencisiyim. Yapay zeka, makine öğrenimi, derin öğrenme ve yazılım geliştirme alanlarına büyük ilgi duyuyorum. Özellikle akıllı sistemler ve gerçek dünyadaki problemlerin çözümü ile ilgili alanlarda, teorik bilgiyi pratik uygulamayla birleştiren projelerde çalışmaktan keyif alıyorum. Akademik ve proje deneyimlerim sayesinde, güvenilir yazılımlar geliştirme ve karmaşık problemlere veri odaklı yaklaşımlar bulma konusunda sağlam bir temel oluşturdum. Araştırma odaklı ve teknik açıdan zorlu ortamlarda kendimi geliştirmeye devam etmek konusunda özellikle motivasyonluyum.",
+      "Sabancı Üniversitesi Bilgisayar Bilimi ve Mühendisliği bölümünde son sınıf öğrencisiyim. Yapay zeka, makine öğrenimi, ve yazılım geliştirme alanlarına büyük ilgi duyuyorum. Özellikle akıllı sistemler ve gerçek dünyadaki problemlerin çözümü ile ilgili alanlarda, teorik bilgiyi pratik uygulamayla birleştiren projelerde çalışmaktan keyif alıyorum. Akademik ve proje deneyimlerim sayesinde, güvenilir yazılımlar geliştirme ve karmaşık problemlere veri odaklı yaklaşımlar bulma konusunda sağlam bir temel oluşturdum. Araştırma odaklı ve teknik açıdan zorlu ortamlarda kendimi geliştirmeye devam etmek konusunda özellikle motivasyonluyum.",
     hero_cta_projects: "Projeleri Gör",
     hero_cta_cv: "CV Oku",
     projects_kicker: "Portfolyo",
